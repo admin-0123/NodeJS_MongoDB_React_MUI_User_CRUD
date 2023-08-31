@@ -1,0 +1,23 @@
+{
+  "name": "table-crud-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client:install": "cd ./client && npm install",
+    "client:dev": "cd ./client && npm run dev",
+    "client:build": "cd ./client && npm run build",
+    "client:start": "cd ./client && npm start",
+    "server:install": "cd ./server && npm install",
+    "server:watch": "cd ./server && npm run watch",
+    "server:start": "cd ./server && npm start",
+    "install": "concurrently \" npm run client:install \" \" npm run server:install \" ",
+    "start": "concurrently \" npm run server:watch \" \" npm run server:start \" \" npm run client:dev \" "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
