@@ -14,7 +14,7 @@ export default class TableController {
             result: tableData
           });
         } else {
-          res.status(404).json({
+          res.json({
             success: false,
             message: "No data found."
           });
@@ -35,7 +35,7 @@ export default class TableController {
     await TableModel.findOne({ email })
       .then(async (user) => {
         if (user) {
-          res.status(400).json({
+          res.json({
             success: false,
             message: "The user already exists."
           });
@@ -83,7 +83,7 @@ export default class TableController {
               error
             }));
         } else {
-          res.status(404).json({
+          res.json({
             success: false,
             message: "User not found."
           })
